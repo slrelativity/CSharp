@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="~/css/style.css">
+        <title>Hello!</title>
+    </head>
+    <body>
+        <h1>Hello from our first cshtml file!!</h1>
+
+        @* @{    
+    List<string> StringList = new List<string>() {"one", "two", "three", "four"};            
+    foreach(string word in StringList)    
+    {        
+        // We can render HTML from within C# code!
+    	// We just have to remember to bring @ back if we want to render variables
+        <p>@word</p>    
+    }
+}
+    </body> *@
+
+
+
+@{    
+    List<string> StringList = new List<string>() {"one", "two", "three", "four"};
+    <!-- We switch back to HTML -->
+    <p>Here is my list of words:</p>
+    <!-- We switch back to C#, but we don't need {} since a foreach loop makes its own code block -->
+    @foreach(string word in StringList)    
+    {        
+        <div>            
+            <p>@word</p>
+            @if(word.Length < 4)            
+            {                 
+                <p>@word is a short word</p>            
+            }       
+        </div>    
+    }
+}
+@for(int i = 0; i < 5; i++)
+{
+    <p>@i</p>
+}
+
+<p>This is some basic HTML</p>
+@{
+    string greeting = "Hi there";
+    int count = 5;
+    for(int i = 1; i < count; i++)
+    {
+        <p>@greeting #@i</p>
+    }
+}
+<p>Here's some more HTML for you!</p>
+<p>That loop ran @count times</p>
+
+@* <!-- IMAGES  -->  
+    <img src="~/images/myimage.jpg" alt="my cool image"/>    
+ *@
+</body>
+
+</html>
+

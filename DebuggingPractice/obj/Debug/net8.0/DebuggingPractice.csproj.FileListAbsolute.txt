@@ -1,0 +1,4 @@
+C:\CSharp\DebuggingPractice\obj\Debug\net8.0\DebuggingPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharp\DebuggingPractice\obj\Debug\net8.0\DebuggingPractice.AssemblyInfoInputs.cache
+C:\CSharp\DebuggingPractice\obj\Debug\net8.0\DebuggingPractice.AssemblyInfo.cs
+C:\CSharp\DebuggingPractice\obj\Debug\net8.0\DebuggingPractice.csproj.CoreCompileInputs.cache

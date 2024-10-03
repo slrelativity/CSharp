@@ -1,0 +1,6 @@
+{
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "notebook.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabCompletion": "onlySnippets"
+}

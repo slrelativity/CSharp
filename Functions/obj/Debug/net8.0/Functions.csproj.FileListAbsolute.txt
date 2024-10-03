@@ -1,0 +1,14 @@
+C:\CSharp\Functions\bin\Debug\net8.0\Functions.exe
+C:\CSharp\Functions\bin\Debug\net8.0\Functions.deps.json
+C:\CSharp\Functions\bin\Debug\net8.0\Functions.runtimeconfig.json
+C:\CSharp\Functions\bin\Debug\net8.0\Functions.dll
+C:\CSharp\Functions\bin\Debug\net8.0\Functions.pdb
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.AssemblyInfoInputs.cache
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.AssemblyInfo.cs
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.csproj.CoreCompileInputs.cache
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.dll
+C:\CSharp\Functions\obj\Debug\net8.0\refint\Functions.dll
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.pdb
+C:\CSharp\Functions\obj\Debug\net8.0\Functions.genruntimeconfig.cache
+C:\CSharp\Functions\obj\Debug\net8.0\ref\Functions.dll

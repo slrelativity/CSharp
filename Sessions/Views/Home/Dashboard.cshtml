@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+
+}
+
+@model User
+
+<div class="card m-5 pr-5 p-4 style=width: 18rem text-align-center">
+    <div class="d-flex">
+
+
+        @* Calling the submitted name from the form *@
+        <h3>Welcome @Context.Session.GetString("Name")!
+            <form asp-action="logout" class="d-flex" method="post">
+                <button type="submit" class="btn btn-danger btn-sm align-items-end ">Log Out</button>
+            </form>
+        </h3>
+    </div>
+
+    @* Calling the count from each click of each individual click *@
+    <h1 class="text-align-center">@Context.Session.GetInt32("Count")</h1>
+
+    <div class="d-flex">
+        @* Each button click gets the current value and adds 1 from to the current value to return the new number *@
+        <form asp-action="Add" method="post">
+            <button type="submit" class="btn btn-warning text-align-center  btn-lg p-3 m-2">+ 1</button>
+        </form>
+
+
+        @* Each button click gets the current value and subtracts 1 from the current value to return the new number *@
+        <form asp-action="Subtract" method="post">
+            <button type="submit" class="btn btn-primary text-align-center btn-lg p-3 m-2">- 1</button>
+        </form>
+    </div>
+
+    <div class="d-flex">
+        @* Each button click gets the current value and multiplies the current value by 2 to return the new number *@
+        <form asp-action="Multiply" class="text-align-center" method="post">
+            <button type="submit" class="btn btn-danger   btn-lg p-3 m-2">x 2</button>
+        </form>
+
+        @* Each button click gets the current value, generates a random number then adds the two numbers to return the new number  *@
+        <form asp-action="Random" method="post">
+            <button type="submit" class="btn btn-success btn-lg p-3 row-sm-2 m-2">+ Random</button>
+        </form>
+    </div>
+
+</div>

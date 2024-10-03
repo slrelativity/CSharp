@@ -1,0 +1,14 @@
+C:\CSharp\Fundamentals_II\bin\Debug\net8.0\Fundamentals_II.exe
+C:\CSharp\Fundamentals_II\bin\Debug\net8.0\Fundamentals_II.deps.json
+C:\CSharp\Fundamentals_II\bin\Debug\net8.0\Fundamentals_II.runtimeconfig.json
+C:\CSharp\Fundamentals_II\bin\Debug\net8.0\Fundamentals_II.dll
+C:\CSharp\Fundamentals_II\bin\Debug\net8.0\Fundamentals_II.pdb
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.AssemblyInfoInputs.cache
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.AssemblyInfo.cs
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.csproj.CoreCompileInputs.cache
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.dll
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\refint\Fundamentals_II.dll
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.pdb
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\Fundamentals_II.genruntimeconfig.cache
+C:\CSharp\Fundamentals_II\obj\Debug\net8.0\ref\Fundamentals_II.dll

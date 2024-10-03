@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "A Web Page";
+    Layout ="_NoNav";
+}
+
+@model User
+
+<div class="card w-50 text-left m-5 p-4 style=width: 115px">
+    <h1 class="text-left pb-4">Enter your information</h1>
+    <form asp-action="process" asp-controller="Home" method="post">
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="Name" class="col-sm-5">Name:</label>
+            <input asp-for="Name" class="col-sm-5">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="Email" class="col-sm-5">Email Address:</label>
+            <input asp-for="Email" class="col-sm-5">
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="Date" class="col-sm-5">Date of Birth:</label>
+            <input asp-for="Date" class="col-sm-5">
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="Password" class="col-sm-5">Password:</label>
+            <input asp-for="Password" class="col-sm-5">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="OddNumber" class="col-sm-5 col-form-label">Favorite Odd Number:</label>
+            <textarea asp-for="OddNumber" class="col-sm-5"></textarea>
+            <span asp-validation-for="OddNumber" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

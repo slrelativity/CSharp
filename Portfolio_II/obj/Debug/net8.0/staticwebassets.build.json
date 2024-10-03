@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "1tjQYDKaatzgo4E7xPaym0/3cGXKe7Wsw7IUkfz7AaQ=",
+  "Source": "Portfolio_II",
+  "BasePath": "_content/Portfolio_II",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Portfolio_II\\wwwroot",
+      "Source": "Portfolio_II",
+      "ContentRoot": "C:\\CSharp\\Portfolio_II\\wwwroot\\",
+      "BasePath": "_content/Portfolio_II",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\CSharp\\Portfolio_II\\wwwroot\\images\\img.cs",
+      "SourceId": "Portfolio_II",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CSharp\\Portfolio_II\\wwwroot\\",
+      "BasePath": "_content/Portfolio_II",
+      "RelativePath": "images/img.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\img.cs"
+    }
+  ]
+}

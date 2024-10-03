@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+}
+@model List<User>
+
+<div class="card w-50 m-5 pr-5 p-4 style=width: 105px align-items-end">
+    <h1>Successfully registered!</h1>
+    
+    @* @foreach (User p in Model)
+    {
+        <p>@p.Name, @p.Email, @p.Date </p>
+    } *@
+
+<a asp-action="Index" asp-controller="Home" class="btn btn-danger ">Go Back</a>
+</div>

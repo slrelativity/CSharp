@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+}
+@model Survey
+<div class="card w-50 form-control text-left m-3">
+    <form asp-action="process" asp-controller="Home" method="post">
+        <div class="mb-3 row .col-form-label">
+            <label asp-for="Name" class="col-sm-3 col-form-label">Your Name:</label>
+            <input asp-for="Name" class="col-sm-5">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row col-form-label">
+            <label asp-for="Location" class="col-sm-3 col-form-label">Dojo Location:</label>
+            <select asp-for="Location" class="col-sm-5">
+                <option value=""> -- Select a Location -- </option>
+                <option value="San Jose">San Jose</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Bellevue">Bellevue</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row col-form-label">
+            <label asp-for="Language" class="col-sm-3 col-form-label">Language:</label>
+            <select asp-for="Language" class="col-sm-5">
+                <option value=""> -- Select a Language -- </option>
+                <option value="C#">C#</option>
+                <option value="Python">Python</option>
+                <option value="MERN">MERN</option>
+                <option value="JAVA">JAVA</option>
+            </select>
+            <span asp-validation-for="Language" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row col-form-label">
+            <label asp-for="Comment" class="form-label me-2">Comment (optional)</label>
+            <textarea asp-for="Comment" class="col-sm-8 form-label m-2"></textarea>
+            <span asp-validation-for="Comment" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

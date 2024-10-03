@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+}
+@model Monster
+
+<div class="card w-50 form-control text-left m-3">
+    <form asp-action="createmonster" asp-controller="Home" method="post">
+        <div class="mb-3 row col-form-label">
+            <label asp-for="MonsterId" class="col-sm-3 col-form-label" >MonsterId:</label>
+            <input asp-for="MonsterId" class="col-sm-5" value="MonsterId">
+            <span asp-validation-for="MonsterId" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row .col-form-label">
+            <label asp-for="Name" class="col-sm-3 col-form-label">Monster Name:</label>
+            <input asp-for="Name" class="col-sm-5" value="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row col-form-label">
+            <label asp-for="Height" class="col-sm-3 col-form-label">Monster Height:</label>
+            <input asp-for="Height" class="col-sm-5" value="Height">
+            <span asp-validation-for="Height" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row col-form-label">
+            <label asp-for="Description" class="form-label me-2">Monster Description</label>
+            <textarea asp-for="Description" class="col-sm-8 form-label m-2" value="Description"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

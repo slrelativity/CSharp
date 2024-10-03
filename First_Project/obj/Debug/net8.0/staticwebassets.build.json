@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "Mi3SCtm4379ZIcLqgLl7z/MMqOeI9WeA2g9EhNwNiYM=",
+  "Source": "First_Project",
+  "BasePath": "_content/First_Project",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "First_Project\\wwwroot",
+      "Source": "First_Project",
+      "ContentRoot": "C:\\CSharp\\First_Project\\wwwroot\\",
+      "BasePath": "_content/First_Project",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\CSharp\\First_Project\\wwwroot\\css\\style.css",
+      "SourceId": "First_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\CSharp\\First_Project\\wwwroot\\",
+      "BasePath": "_content/First_Project",
+      "RelativePath": "css/style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style.css"
+    }
+  ]
+}

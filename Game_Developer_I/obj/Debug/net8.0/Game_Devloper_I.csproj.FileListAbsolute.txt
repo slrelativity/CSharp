@@ -1,0 +1,14 @@
+C:\CSharp\Game_Developer_I\bin\Debug\net8.0\Game_Devloper_I.exe
+C:\CSharp\Game_Developer_I\bin\Debug\net8.0\Game_Devloper_I.deps.json
+C:\CSharp\Game_Developer_I\bin\Debug\net8.0\Game_Devloper_I.runtimeconfig.json
+C:\CSharp\Game_Developer_I\bin\Debug\net8.0\Game_Devloper_I.dll
+C:\CSharp\Game_Developer_I\bin\Debug\net8.0\Game_Devloper_I.pdb
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.GeneratedMSBuildEditorConfig.editorconfig
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.AssemblyInfoInputs.cache
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.AssemblyInfo.cs
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.csproj.CoreCompileInputs.cache
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.dll
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\refint\Game_Devloper_I.dll
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.pdb
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\Game_Devloper_I.genruntimeconfig.cache
+C:\CSharp\Game_Developer_I\obj\Debug\net8.0\ref\Game_Devloper_I.dll

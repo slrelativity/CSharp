@@ -1,0 +1,9 @@
+@{
+    ViewData["Title"] = "Past Date";
+    Layout = "_NoNav";
+}
+@model DateForm
+
+<h1>Submitted Date</h1>
+        <p>Date: @Model.PastDate </ p >
+<a asp-action = "Index" asp-controller = "Home" class= "btn btn-danger"> Go Back </a>

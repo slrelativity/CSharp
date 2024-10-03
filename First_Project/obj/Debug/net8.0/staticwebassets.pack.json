@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\CSharp\\First_Project\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.First_Project.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.First_Project.props",
+      "PackagePath": "build\\First_Project.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.First_Project.props",
+      "PackagePath": "buildMultiTargeting\\First_Project.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.First_Project.props",
+      "PackagePath": "buildTransitive\\First_Project.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

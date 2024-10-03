@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+
+@model int?
+
+
+<h1>@Model</h1>
+<h1>My user's name (directly from session) is: @Context.Session.GetInt32("MyNum")</h1>

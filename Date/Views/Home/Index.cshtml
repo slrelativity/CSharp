@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Past Date";
+    Layout = "_NoNav";
+}
+
+@model DateForm
+<div class="text-left m-5">
+    <form asp-action="process" asp-controller="Home" method="post">
+
+        <div class="mb-3 row mb-3 .col-form-label">
+            <label asp-for="PastDate" class="col-sm-3 col-form-label">Future Date:</label>
+            <input asp-for="PastDate" class="col-sm-3">
+            <span asp-validation-for="PastDate" class="text-danger"></span>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>

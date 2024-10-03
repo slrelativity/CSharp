@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+}
+@model List<Dish>
+
+<div class=" form-control text-center">
+    <h1 class="display-4">Welcome to CRUDelicious</h1>
+    <a asp-action="Index" asp-controller="Dish" class="btn btn-danger">Home</a>
+    <a asp-action="NewDish" asp-controller="Dish" class="btn btn-danger">Add a new Dish!</a>
+    <br>
+    <p>Check out some recent dishes</p>
+    @foreach (Dish d in Model)
+    {
+        <div class="d-flex ">
+            
+            <a href="/dishes/@d.DishId">@d.Name </a><p> by @d.Chef</p>
+        </div>
+    }
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "A Web Page";
+    Layout = "_NoNav";
+}
+
+@* Model User is calling/referencing validations which require a Name*@
+@model User
+
+@* Input for for Sessions *@
+<div class="card w-50 text-center align-items-center m-5 p-4 style=width: 115px">
+    <h1 class="text-center pb-4">Welcome!</h1>
+    <form asp-action="process" asp-controller="Home" method="post">
+        <div class="mb-3 row .col-form-label">
+            <label asp-for="Name" class="col-5">Please give your name:</label>
+            <input asp-for="Name" class="col-5">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>

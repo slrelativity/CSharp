@@ -1,0 +1,9 @@
+
+@model LoginUser
+<h1>@Context.Session.GetString("FirstName")</h1>
+
+<form action="logout" method="post">
+    <input type="submit" value="Logout">
+</form>
+
+<h1>Success!</h1>

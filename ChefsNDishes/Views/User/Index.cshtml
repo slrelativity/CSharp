@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Chef>
+    
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Number of Dishes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Chef c in Model)
+        {
+        <tr>
+            <th>@c.FirstName @c.LastName</th>
+                <th>@CalculateAge(c.Date)</th>
+            <th>@c.tasytyDishes.Count</th>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@functions {
+    public int CalculateAge(DateTime Date)
+    {
+        var today = DateTime.Today;
+        int age = today.Year - Date.Value.Year;
+        if (Date.Value > today.AddYears(-age)) age--;
+        return age;
+    }
+}

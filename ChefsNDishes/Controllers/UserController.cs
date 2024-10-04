@@ -1,8 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Filters;
 using ChefsNDishes.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChefsNDishes.Controllers;
@@ -20,9 +18,8 @@ public class UserController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        List<Chef> AllChefs = new();
-        AllChefs = _context.Chefs.Include(chef => chef.tasytyDishes).ToList();
-        return View("Index", AllChefs);
+        List<Chef> AllChefs = _context.Chefs.Include(c => c.CreatedDishes).ToList();
+        return View(AllChefs);
     }
 
 
@@ -30,16 +27,16 @@ public class UserController : Controller
     [HttpGet("dishes")]
     public ViewResult Dishes()
     {
-        List<Dish> allDishes = _context.Dishes.Include(chef => chef.Creator).ToList();
-        return View(allDishes);
+        List<Dish> AllDishes = _context.Dishes.Include(c => c.Creator).ToList();
+        return View(AllDishes);
     }
 
 
     [HttpGet("dishes/new")]
     public ViewResult AddDish()
     {
-        List<Chef> allChefs = _context.Chefs.ToList();
-        ViewBag.ChefOptions = allChefs;
+        List<Chef> AllChefs = _context.Chefs.ToList();
+        ViewBag.ChefOptions = AllChefs;
         return View("AddDish");
     }
     

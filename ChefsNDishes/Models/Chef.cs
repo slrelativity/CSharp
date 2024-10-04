@@ -27,19 +27,30 @@ public class Chef
     [DisplayName("Date of Birth")]
     [Required]
     [DataType(DataType.Date)]
-    [PastDate]
-    public DateTime? Date { get; set; }
+    [BirthDay]
+    public DateTime Date  { get; set; }
 
 
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
-    public List<Dish> tasytyDishes { get;set; } = new();
-    
+    public List<Dish> CreatedDishes { get;set; } = new();
+
+
+    public int GetAge()
+    {
+        DateTime n = DateTime.Now; // To avoid a race condition around midnight
+        int age = n.Year - Date.Year;
+
+        if (n.Month < Date.Month || (n.Month == Date.Month && n.Day < Date.Day))
+            age--;
+
+        return age;
+    }
 }
 
 
-public class PastDateAttribute : ValidationAttribute
+public class BirthDayAttribute : ValidationAttribute
 {
     protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
     {
@@ -58,3 +69,4 @@ public class PastDateAttribute : ValidationAttribute
         }
     }
 }
+

@@ -63,9 +63,8 @@ namespace ChefsNDishes.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("DishId"));
 
-                    b.Property<string>("Calories")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("Calories")
+                        .HasColumnType("int");
 
                     b.Property<int>("ChefId")
                         .HasColumnType("int");
@@ -95,7 +94,7 @@ namespace ChefsNDishes.Migrations
             modelBuilder.Entity("ChefsNDishes.Models.Dish", b =>
                 {
                     b.HasOne("ChefsNDishes.Models.Chef", "Creator")
-                        .WithMany("tasytyDishes")
+                        .WithMany("CreatedDishes")
                         .HasForeignKey("ChefId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -105,7 +104,7 @@ namespace ChefsNDishes.Migrations
 
             modelBuilder.Entity("ChefsNDishes.Models.Chef", b =>
                 {
-                    b.Navigation("tasytyDishes");
+                    b.Navigation("CreatedDishes");
                 });
 #pragma warning restore 612, 618
         }

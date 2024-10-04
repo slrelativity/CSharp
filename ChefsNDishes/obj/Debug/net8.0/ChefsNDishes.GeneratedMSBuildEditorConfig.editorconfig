@@ -34,16 +34,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxBZGREaXNoLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/CSharp/ChefsNDishes/Views/User/Dishes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEaXNoZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/CSharp/ChefsNDishes/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/ChefsNDishes/Views/User/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/CSharp/ChefsNDishes/Views/User/TastyDishes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUYXN0eURpc2hlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/CSharp/ChefsNDishes/Views/_ViewImports.cshtml]

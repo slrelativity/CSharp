@@ -1,0 +1,46 @@
+@{
+    int Sessioned = (int)Context.Session.GetInt32("UserId");
+    
+    Layout = "_EmptyLayout";
+@await Html.PartialAsync("_Navbar")
+}
+@model List<Wedding>
+
+
+
+    <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Wedding of</th>
+            <th>Date</th>
+            <th>Guest Count</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Wedding w in Model)
+        {
+            bool ViewWedding = w.UserId == Sessioned;
+            bool Attending = w.UserRSVPs.Any(u => u.UserId == Sessioned);
+        <tr>
+            <td><a asp-route-WeddingId ="@w.WeddingId" asp-action="ViewWedding" asp-controller="Wedding" class="Classes">@w.WedderOne & @w.WedderTwo</a></td>
+            <td>@w.Date.ToString("MMM d yyy")</td>
+            <td>@w.UserRSVPs.Count</td>
+            <td>
+            @if(ViewWedding)
+            {
+            <form asp-route-WeddingId ="@w.WeddingId" asp-action="DeleteRSVP" asp-controller="Wedding" method="post">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+            }
+            else
+            {
+            <form asp-route-WeddingId ="@w.WeddingId" asp-action="ToggleRSVP" asp-controller="Wedding" method="post">
+                <button type="submit" class="btn btn-primary">@(Attending? "Un-RSVP" : "RSVP")</button>
+            </form>
+            }    
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

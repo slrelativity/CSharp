@@ -22,35 +22,6 @@ namespace WeddingPlanner.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("WeddingPlanner.Models.RSVP", b =>
-                {
-                    b.Property<int>("RSVPId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("RSVPId"));
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WeddingId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RSVPId");
-
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("WeddingId");
-
-                    b.ToTable("RSVPs");
-                });
-
             modelBuilder.Entity("WeddingPlanner.Models.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -86,6 +57,35 @@ namespace WeddingPlanner.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("WeddingPlanner.Models.UserRSVPResponse", b =>
+                {
+                    b.Property<int>("UserRSVPResponseID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserRSVPResponseID"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WeddingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserRSVPResponseID");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WeddingId");
+
+                    b.ToTable("UserRSVPResponses");
                 });
 
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
@@ -125,7 +125,7 @@ namespace WeddingPlanner.Migrations
                     b.ToTable("Weddings");
                 });
 
-            modelBuilder.Entity("WeddingPlanner.Models.RSVP", b =>
+            modelBuilder.Entity("WeddingPlanner.Models.UserRSVPResponse", b =>
                 {
                     b.HasOne("WeddingPlanner.Models.User", "RSVPingUser")
                         .WithMany("WeddingRSVPs")
@@ -134,7 +134,7 @@ namespace WeddingPlanner.Migrations
                         .IsRequired();
 
                     b.HasOne("WeddingPlanner.Models.Wedding", "RSVPedWedding")
-                        .WithMany("UserRSVPs")
+                        .WithMany("UserResponses")
                         .HasForeignKey("WeddingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -164,7 +164,7 @@ namespace WeddingPlanner.Migrations
 
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
-                    b.Navigation("UserRSVPs");
+                    b.Navigation("UserResponses");
                 });
 #pragma warning restore 612, 618
         }

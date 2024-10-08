@@ -33,7 +33,7 @@ public class User
 
     [Required]
     [DataType(DataType.Password)]
-    [MinLength(8, ErrorMessage = "A password is required!")]
+    [MinLength(8, ErrorMessage = "Password must be at least 8 characters is required!")]
     public string Password { get; set; }
 
 
@@ -52,8 +52,7 @@ public class User
 
     //List of planned weddings NAVPROP
     public List<Wedding> PlannedWedding { get; set; } = [];
-    //List of RSVPs to weddings NAVPROP
-    public List<RSVP> WeddingRSVPs { get; set; } = [];
+    public List<UserRSVPResponse>  WeddingRSVPs { get;set; } =[];
 }
 
 

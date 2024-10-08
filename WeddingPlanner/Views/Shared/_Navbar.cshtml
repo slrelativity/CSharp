@@ -5,10 +5,10 @@
 
 <h1>Welcome @Context.Session.GetString("FirstName")!</h1>
 
-<div class="text-center mb-3 d-flex d-flex justify-content-around">
+<div class="text-center mb-2 d-flex justify-content-between">
     <a href="/weddings">Home</a> | <a href="/weddings/new">Plan a Wedding</a>
     | <form asp-controller="User" asp-action="Logout" method="post">
-    <button type="submit" class="btn btn-Primary">Logout</button>
-</form>
+        <button type="submit" class="btn btn-Primary">Logout</button>
+    </form>
 
 </div>

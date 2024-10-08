@@ -1,13 +1,21 @@
 @{
     ViewData["Title"] = "One Wedding";
+    @await Html.PartialAsync("_Navbar")
 }
-@await Html.PartialAsync("_Navbar")
-
 
 @model Wedding
-<h1>@Model.WedderOne & @Model.WedderTwo</h1>
 <div>
-<p>@Model.RSVPer</p>
-    
-    
+    <h4>@Model.WedderOne & @Model.WedderTwo's wedding</h4>
+
+    <h6>Date: @Model.Date.ToString("MMM d yyy")</h6>
+    <br>
+    <h6>Guests:</h6>
+    <div class="card w-25 p-2">
+        <h6>
+    @foreach (UserRSVPResponse u in Model.UserResponses)
+    {
+        <p>@u.RSVPingUser?.FirstName @u.RSVPingUser?.LastName</p>
+    }
+    </h6>
+    </div>
 </div>

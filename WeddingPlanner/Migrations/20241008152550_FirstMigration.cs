@@ -50,36 +50,43 @@ namespace WeddingPlanner.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Weddings", x => x.WeddingId);
+                    table.ForeignKey(
+                        name: "FK_Weddings_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "UserId",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "RSVPs",
+                name: "UserRSVPResponses",
                 columns: table => new
                 {
-                    RSVPId = table.Column<int>(type: "int", nullable: false)
+                    UserRSVPResponseID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", maxLength: 60, nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     WeddingId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RSVPs", x => x.RSVPId);
+                    table.PrimaryKey("PK_UserRSVPResponses", x => x.UserRSVPResponseID);
                     table.ForeignKey(
-                        name: "FK_RSVPs_Users_UserId",
+                        name: "FK_UserRSVPResponses_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "UserId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RSVPs_Weddings_WeddingId",
+                        name: "FK_UserRSVPResponses_Weddings_WeddingId",
                         column: x => x.WeddingId,
                         principalTable: "Weddings",
                         principalColumn: "WeddingId",
@@ -88,27 +95,32 @@ namespace WeddingPlanner.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RSVPs_UserId",
-                table: "RSVPs",
+                name: "IX_UserRSVPResponses_UserId",
+                table: "UserRSVPResponses",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RSVPs_WeddingId",
-                table: "RSVPs",
+                name: "IX_UserRSVPResponses_WeddingId",
+                table: "UserRSVPResponses",
                 column: "WeddingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Weddings_UserId",
+                table: "Weddings",
+                column: "UserId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RSVPs");
-
-            migrationBuilder.DropTable(
-                name: "Users");
+                name: "UserRSVPResponses");
 
             migrationBuilder.DropTable(
                 name: "Weddings");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }

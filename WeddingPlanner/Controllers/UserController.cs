@@ -76,7 +76,7 @@ public class UserController : Controller
             }
             // Handle success (this should route to an internal page)  
             HttpContext.Session.SetInt32("UserId", newUser.UserId);
-            HttpContext.Session.SetString("Email", newUser.Email);
+            HttpContext.Session.SetString("FirstName", newUser.FirstName);
             // Handle else
             return RedirectToAction("AllWeddings", "Wedding");
         }

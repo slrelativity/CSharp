@@ -1,31 +1,27 @@
 @{
     int Sessioned = (int)Context.Session.GetInt32("UserId");
-    
-    Layout = "_EmptyLayout";
-@await Html.PartialAsync("_Navbar")
+    @await Html.PartialAsync("_Navbar")
 }
 @model List<Wedding>
-
-
 
     <table class="table table-striped">
     <thead>
         <tr>
-            <th>Wedding of</th>
-            <th>Date</th>
-            <th>Guest Count</th>
-            <th>Action</th>
+            <th><h5>Wedding of</h5></th>
+            <th><h5>Date</h5></th>
+            <th><h5>Guest Count</h5></th>
+            <th><h5>Action</h5></th>
         </tr>
     </thead>
     <tbody>
         @foreach (Wedding w in Model)
         {
             bool ViewWedding = w.UserId == Sessioned;
-            bool Attending = w.UserRSVPs.Any(u => u.UserId == Sessioned);
+            bool Attending = w.UserResponses.Any(u => u.UserId == Sessioned);
         <tr>
             <td><a asp-route-WeddingId ="@w.WeddingId" asp-action="ViewWedding" asp-controller="Wedding" class="Classes">@w.WedderOne & @w.WedderTwo</a></td>
             <td>@w.Date.ToString("MMM d yyy")</td>
-            <td>@w.UserRSVPs.Count</td>
+            <td>@w.UserResponses.Count</td>
             <td>
             @if(ViewWedding)
             {

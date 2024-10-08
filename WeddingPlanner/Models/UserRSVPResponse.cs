@@ -3,12 +3,14 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 namespace WeddingPlanner.Models;
 
-public class RSVP
+public class UserRSVPResponse
 
 {
+    internal int weddingId;
+
     [Key]
     //UPDATE ID
-    public int RSVPId { get; set; }
+    public int UserRSVPResponseID { get; set; }
 
     
     public DateTime CreatedAt { get; set; } = DateTime.Now;

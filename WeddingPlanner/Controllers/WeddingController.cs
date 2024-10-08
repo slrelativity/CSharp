@@ -21,7 +21,9 @@ public class WeddingController : Controller
     [HttpGet("weddings")]
     public ViewResult AllWeddings()
     {
-        List<Wedding> AllWeddings = _context.Weddings.OrderByDescending(w => w.CreatedAt).ToList();
+        List<Wedding> AllWeddings = _context.Weddings
+                                                        .Include(w => w.UserResponses)
+                                                        .OrderByDescending(w => w.CreatedAt).ToList();
         return View(AllWeddings);
     }
 
@@ -30,7 +32,10 @@ public class WeddingController : Controller
     [HttpGet("weddings/{weddingId}")]
     public IActionResult ViewWedding(int weddingId)
     {
-        Wedding? SingleWedding = _context.Weddings.FirstOrDefault(w => w.WeddingId == weddingId);
+        Wedding? SingleWedding = _context.Weddings
+                                                        .Include(w => w.UserResponses )
+                                                        .ThenInclude(u => u.RSVPingUser)
+                                                        .FirstOrDefault(w => w.WeddingId == weddingId);
         if (SingleWedding == null)
         {
             return RedirectToAction("AllWeddings");
@@ -73,16 +78,28 @@ public ViewResult AddWedding()
         }
         return RedirectToAction("AllWeddings");
     }
-    
-    
-    // [HttpPost("weddings/{weddingId}/toggle_rsvp")]
-    // public RedirectToActionResult ToggleRSVP(int weddingId)
-    // {
-    //     int UserId = (int) HttpContext.Session.GetInt32("UserId");
-        
-    // }
-    
-    
+
+
+    [HttpPost("weddings/{weddingId}/toggle_rsvp")]
+    public IActionResult ToggleRSVP(int weddingId)
+    {
+        int UserId = (int) HttpContext.Session.GetInt32("UserId");
+        UserRSVPResponse? userRSVPResponse  = _context.UserRSVPResponses.FirstOrDefault(uru => uru.UserId == UserId && uru.WeddingId == weddingId);
+        if (userRSVPResponse == null)
+        {
+            UserRSVPResponse newRSVP = new(){ UserId=UserId, WeddingId=weddingId};
+            _context.Add(newRSVP);
+        }
+        else
+        {
+            _context.Remove(userRSVPResponse);
+        }
+        _context.SaveChanges();
+        return RedirectToAction("AllWeddings");
+    }
+
+
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

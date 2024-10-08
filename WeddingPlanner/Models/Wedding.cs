@@ -26,23 +26,24 @@ public class Wedding
     public string WedderTwo { get; set; }
 
 
-
     [DisplayName("Wedding Date")]
     [Required]
     [DataType(DataType.Date)]
+    [WeddingDate]
     public DateTime Date { get; set; }
 
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
+
     //Foriegn key
     public int UserId { get;set; }
 
 
     //NAVPROPS
-    public User? RSVPer { get;set; }
-    public List<RSVP> UserRSVPs { get; set; } = new ();
+    public User? Planner { get;set; }
+    public List<UserRSVPResponse> UserResponses { get; set; } = [];
 }
 
 
@@ -55,7 +56,8 @@ public class WeddingDateAttribute : ValidationAttribute
             return new ValidationResult("Wedding Date is required!");
         }
         // You first may want to unbox "value" here and cast to to a DateTime variable!
-        if (((DateTime)value!) < DateTime.Now)
+        DateTime weddingDate = (DateTime)value!;
+        if (weddingDate <= DateTime.Now)
         {
             return new ValidationResult("Wedding Date must be in the future!");
         }

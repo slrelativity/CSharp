@@ -19,7 +19,6 @@ public class Dish
 
 
     [Required(ErrorMessage = "Number of calories is required!")]
-
     public int Calories { get; set; }
     
     

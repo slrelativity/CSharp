@@ -1,0 +1,37 @@
+@{
+    @await Html.PartialAsync("_Navbar")
+    int UserId = (int)Context.Session.GetInt32("UserId");
+     bool ViewPost = Model.UserId == UserId;
+        bool Liked = Model.UserLikes.Any(u => u.UserId == UserId);
+}
+
+
+@model Post
+
+<div>
+    <h2>@Model.Title</h2>
+    <br>
+    <img src="@Model.ImgURL" alt="@Model.Title">
+    <p>By: @Model.Poster?.Name</p>
+    <p>Medium @Model.Medium</p>
+    <p>@(Model.ForSale ? "For Sale" : "Not For Sale")</p>
+    <p>@Model.UserLikes.Count likes</p>
+    <ul>
+        
+        @foreach (UserPostLike upl in Model.UserLikes)
+        {
+            <li>@upl.LikingUser?.Name</li>
+        }
+    
+    </ul>
+    @if (ViewPost)
+    {
+        
+    <form asp-route-PostId="@Model.PostId" asp-action="Edit" asp-controller="Post" method="post">
+        <button class="btn btn-primary">Edit</button>
+    </form>
+    <form asp-route-PostId="@Model.PostId" asp-action="Delete" asp-controller="Post" method="post">
+        <button class="btn btn-primary">Delete</button>
+    </form>
+    }
+</div>

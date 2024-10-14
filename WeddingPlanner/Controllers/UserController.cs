@@ -67,7 +67,7 @@ public class UserController : Controller
             // Initialize hasher object        
             PasswordHasher<LoginUser> hasher = new PasswordHasher<LoginUser>();
             // Verify provided password against hash stored in db        
-            var result = hasher.VerifyHashedPassword(userSubmission, newUser.Password, userSubmission.LoginPassword);                                    // Result can be compared to 0 for failure        
+            var result = hasher.VerifyHashedPassword(userSubmission, newUser.Password, userSubmission.LoginPassword);   
             if (result == 0)
             {
                 // Handle failure (this should be similar to how "existing email" is handled)

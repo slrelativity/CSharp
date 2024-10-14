@@ -1,0 +1,19 @@
+@{
+    @await Html.PartialAsync("_Navbar")
+    Context.Session.GetString("UserName");
+}
+
+
+@model User //Updated from Coupon to User
+<div>Account information</div>
+
+<p></p>
+<p>Username: @Model.UserName</p>
+<p>Email: @Model.Email</p>
+<br>
+@*Updated from @Model.Clipper.ClippedCoupon.Count *@
+<p>Coupons posted: @Model.ClippedCoupon.Count</p>  
+@* Added the following below *@
+<p> # of Coupons you used: @Model.CouponClippings.Count</p>
+@* Added the following to the sum on coupons clipped *@
+<p> # of times you Coupons were used: @Model.ClippedCoupon.Sum(c =>c.UserClippings.Count)</p>

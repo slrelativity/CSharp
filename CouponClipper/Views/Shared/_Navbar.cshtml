@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Coupon Clipper";
+}
+
+
+<div class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <a href="/coupons">Coupon Clipper</a> <a href="/coupons/new">Add Coupon</a><a href="/account">Account info</a>
+    <form asp-controller="User" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-link">Logout</button>
+    </form>
+</div>

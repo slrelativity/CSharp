@@ -6,8 +6,6 @@ namespace WeddingPlanner.Models;
 public class UserRSVPResponse
 
 {
-    internal int weddingId;
-
     [Key]
     //UPDATE ID
     public int UserRSVPResponseID { get; set; }

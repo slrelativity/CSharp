@@ -1,0 +1,33 @@
+@{
+    @await Html.PartialAsync("_Navbar")
+}
+
+
+@model Movie
+
+
+<div class="card w-50 form-control text-left m-3">
+    <h1 class="text-center">Edit Movie</h1>
+    <form asp-action="EditProcess" asp-controller="Movie" asp-route-movieId="@Model.MovieId" method="post">
+        <div class="mb-3 form-label">
+            <label asp-for="Title" class="form-label">Title:</label>
+            <input asp-for="Title" class="form-control">
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="Genre" class="form-label">Genre:</label>
+            <input asp-for="Genre" class="form-control">
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="ReleaseDate" class="form-label">Release Date:</label>
+            <input asp-for="ReleaseDate" class="form-control">
+            <span asp-validation-for="ReleaseDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="Synopsis" class="form-label">Synopsis:</label>
+            <textarea asp-for="Synopsis" class="form-control"></textarea>
+            <span asp-validation-for="Synopsis" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary">Update</button>
+    </form>

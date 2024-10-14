@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Project";
+}
+
+
+    <p>The WatchList</p>
+    
+<div class="text-center mb-2 d-flex justify-content-between align-items-end">
+    <a href="/movies">Home</a> 
+</div>
+
+
+<div class="text-center mb-2 d-flex justify-content-between align-items-center">
+    <a href="/movies/new">Add a to your movie to your WatchList</a>
+    <form asp-controller="User" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-link">Logout</button>
+    </form>
+</div>
+

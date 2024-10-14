@@ -1,0 +1,38 @@
+@{
+    int Sessioned = (int)Context.Session.GetInt32("UserId");
+    @await Html.PartialAsync("_Navbar")
+}
+
+@model List<Movie>
+<h1>Welcome @Context.Session.GetString("FirstName")!</h1>
+
+<h3>All Movies</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><h5>Title</h5></th>
+            <th><h5>Genre</h5></th>
+            <th><h5>Release Year</h5></th>
+            <th><h5>Uploaded By</h5></th>
+            <th><h5>Actions</h5></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Movie m in Model)
+        {
+        <tr>
+            <td>@m.Title</td>            
+            <td>@m.Genre</td>
+            <td>@m.ReleaseDate.Value.ToString("yyyy")</td>
+            <td>@m.Rater.FirstName</td>
+            <td>
+                <form asp-route-MovieId ="@m.MovieId" asp-action="Delete" asp-controller="Movie" method="post">
+                    <button type="submit" class="btn btn-link">Delete</button>  
+                </form> | <a asp-route-MovieId ="@m.MovieId" asp-action="ViewMovie" asp-controller="Movie" class="Classes">View</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+    
+  

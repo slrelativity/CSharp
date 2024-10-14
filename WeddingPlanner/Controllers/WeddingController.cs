@@ -28,7 +28,6 @@ public class WeddingController : Controller
     }
 
 
-
     [HttpGet("weddings/{weddingId}")]
     public IActionResult ViewWedding(int weddingId)
     {
@@ -43,11 +42,12 @@ public class WeddingController : Controller
         return View(SingleWedding);
     }
 
-[HttpGet("weddings/new")]
-public ViewResult AddWedding()
-{
-    return View("NewWedding");
-}
+    [HttpGet("weddings/new")]
+    public ViewResult AddWedding()
+    {
+        return View("NewWedding");
+    }
+
 
     [HttpPost("weddings/create")]
     public IActionResult CreateWedding(Wedding newWedding)

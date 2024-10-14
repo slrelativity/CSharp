@@ -7,7 +7,6 @@ namespace WeddingPlanner.Models;
 public class Wedding
 
 {
-    internal int weddingId;
 
     [Key]
     //UPDATE ID

@@ -1,0 +1,23 @@
+@{
+    int userId = (int)Context.Session.GetInt32("UserId"); 
+    string userName = Context.Session.GetString("UserName");
+    @await Html.PartialAsync("_Navbar")
+}
+
+@model List<Coupon>
+
+<div>
+    @foreach (Coupon c in Model)
+    {
+        bool viewCoupon = c.UserId != userId;
+        bool used = c.UserClippings.Any(u => u.UserId == userId);
+            <h4>@c.CouponCode</h4>
+            <h5>Use on: @c.Website</h5>
+            <p>@c.Description</p>
+            <p>@c.UserClippings.Count people have used this</p>
+            <form asp-route-CouponId="@c.CouponId" asp-action="ToggleCoupon" asp-controller="Coupon">
+                <button class="btn btn-link">@(used ? "You used this" : "Use this coupon")</button>
+            </form>
+            <p>Posted By: @c.Clipper.UserName</p>
+    }
+</div>

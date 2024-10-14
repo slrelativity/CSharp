@@ -146,13 +146,13 @@ namespace WeddingPlanner.Migrations
 
             modelBuilder.Entity("WeddingPlanner.Models.Wedding", b =>
                 {
-                    b.HasOne("WeddingPlanner.Models.User", "RSVPer")
+                    b.HasOne("WeddingPlanner.Models.User", "Planner")
                         .WithMany("PlannedWedding")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("RSVPer");
+                    b.Navigation("Planner");
                 });
 
             modelBuilder.Entity("WeddingPlanner.Models.User", b =>

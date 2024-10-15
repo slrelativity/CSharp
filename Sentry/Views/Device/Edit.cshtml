@@ -1,0 +1,39 @@
+@{
+    int userId = (int)Context.Session.GetInt32("UserId");
+    @await Html.PartialAsync("_Navbar")
+}
+
+@model Device
+
+<div class="card w-50 form-control text-left justtify-content-center m-3">
+    <h1 class="text-left">Edit Device @Model.DeviceId</h1>
+    <form asp-action="Edit" asp-controller="Device" asp-route-deviceId="@Model.DeviceId" method="post">
+        <div class="mb-3 form-label">
+            <label asp-for="SerialNumber" class="form-label">Computer Serial#</label>
+            <input asp-for="SerialNumber" class="form-control">
+            <span asp-validation-for="SerialNumber" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="HostName" class="form-label">Computer Host Name</label>
+            <input asp-for="HostName" class="form-control">
+            <span asp-validation-for="HostName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="Badge" class="form-label">Employee Badge#</label>
+            <input asp-for="Badge" class="form-control">
+            <span asp-validation-for="Badge" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="EmployeeName" class="form-label">Employee Name</label>
+            <input asp-for="EmployeeName" class="form-control">
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 form-label">
+            <label asp-for="Status" class="form-label">Status</label>
+            <input asp-for="Status" class="form-control">
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+        <input type="submit" value="Update Device" class="btn btn-primary">
+    </div>
+    </form>

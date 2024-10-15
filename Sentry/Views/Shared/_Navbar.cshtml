@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Sentry";
+}
+
+
+<div class="justify-content-end d-flex align-items-center">
+    <a href="/dashboard" class="p-4 ">Sentry</a> | <a href="/devices/new" class="p-4">Add Device</a> | <a href="devices/edit/Id"class="p-4"> Edit Device</a> |
+    <form asp-controller="User" asp-action="Logout" method="post">
+        <button type="submit" class="btn btn-link">Logout</button>
+    </form>
+</div>

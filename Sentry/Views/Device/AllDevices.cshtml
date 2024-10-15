@@ -1,0 +1,32 @@
+@{
+    int userId = (int)Context.Session.GetInt32("UserId"); 
+    string userName = Context.Session.GetString("UserName");
+    @await Html.PartialAsync("_Navbar")
+}
+
+@model List<Device>
+    <div>
+        <table class="table table-success table-striped">
+            <thead>
+                <tr>
+                    <th>Device Serial #</th>
+                    <th>Computer Host Name</th>
+                    <th>Badge #</th>
+                    <th>Badge Owner</th>
+                    <th>Profile Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Device d in Model)
+                {        
+                    bool ViewDevice = d.UserId != userId;
+                    bool Status = d.UserDevices.Any(u => u.UserId == userId);
+                    <p>@d.SerialNumber</p>
+                    <p>@d.HostName</p>
+                    <p>@d.Badge</p>
+                    <a asp-action="ViewDevice" asp-controller="Device" class="Classes" asp-route-DeviceId="@d.DeviceId">@d.EmployeeName</a>
+                    <p>@d.Status</p>
+                }
+        </tbody>
+    </div>
+</table>

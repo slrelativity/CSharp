@@ -1,8 +1,8 @@
 @{
     @await Html.PartialAsync("_Navbar")
     int UserId = (int)Context.Session.GetInt32("UserId");
-     bool ViewPost = Model.UserId == UserId;
-        bool Liked = Model.UserLikes.Any(u => u.UserId == UserId);
+    bool ViewPost = Model.UserId == UserId;
+    bool Liked = Model.UserLikes.Any(u => u.UserId == UserId);
 }
 
 

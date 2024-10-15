@@ -1,0 +1,18 @@
+@{
+    int userId = (int)Context.Session.GetInt32("UserId");
+    @await Html.PartialAsync("_Navbar")
+}
+
+@model Device
+
+<div>
+    <div class="card w-50 form-control text-left justtify-content-center m-3">
+        <h2>Viewing @Model.HostName</h2>
+        <br>
+        <p>Employee Name: @Model.EmployeeName</p>
+        <p>Computer Host Name: @Model.HostName</p>
+        <p>Device Serial#: @Model.SerialNumber</p>
+        <p>Available Badge#: @Model.Badge</p>
+        <p>Status: @Model.Status</p>
+    </div>
+</div>
